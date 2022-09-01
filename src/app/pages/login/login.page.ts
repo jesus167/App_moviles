@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
+import {  Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
+import { DbService } from 'src/app/services/db.service';
 
 @Component({
   selector: 'app-login',
@@ -7,21 +9,36 @@ import { NavigationExtras, Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  
+  constructor(private router: Router,
+    private alertController: AlertController,
+    private db: DbService) { }
+  
   mdl_user: string='';
   mdl_pass: string='';
-
-  constructor(private router: Router) { }
 
   ngOnInit() {
   }
   navegar(){
-    let parametros: NavigationExtras = {
-      state:{
-        usuario: this.mdl_user,
-        password:  this.mdl_pass
-      }
+    let valido = this.db.validarCredenciales(this.mdl_user, this.mdl_pass);
+    if(!valido){
+      this.mostrarMensaje();
     }
-    this.router.navigate(['principal'], parametros)
   }
 
+  recupera(){
+    this.router.navigate(['restpass'])
+  }
+  async mostrarMensaje() {
+    const alert = await this.alertController.create({
+      header: 'Alerta',
+      message: 'Usuario o Contraseña incorrectos!!',
+      buttons: ['OK'],
+    });
+    await alert.present();
+  }
 }
+
+
+
+

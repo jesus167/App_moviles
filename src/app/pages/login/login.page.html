@@ -4,21 +4,21 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-text-center">
+<ion-content class="ion-text-center ion-padding">
 
-  <div>
-    <ion-label>Usuario</ion-label>
+  <ion-item color="whide" class="ion-text-center ion-padding">
+
+    <ion-label position="floating">Usuario</ion-label>
     <ion-input placeholder="Usuario" [(ngModel)]="mdl_user"></ion-input>
-  </div>
-
-  <div>
-    <ion-label>Contraseña</ion-label>
+    <ion-label position="floating">Contraseña</ion-label>
     <!-- Input with placeholder -->
     <ion-input type="password"  placeholder="***********" [(ngModel)]="mdl_pass"></ion-input>
-  </div>
+  </ion-item>
   <div>
   <!-- Default -->
   <ion-button (click)="navegar()">Ingresar</ion-button>
   </div>
+
+  <ion-button (click)="recupera()">No recuerdas tu contraseña</ion-button>
 
 </ion-content>
