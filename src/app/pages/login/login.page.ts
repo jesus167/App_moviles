@@ -20,14 +20,15 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
   navegar(){
-    let valido = this.db.validarCredenciales(this.mdl_user, this.mdl_pass);
-    if(!valido){
+    console.log(this.mdl_user);
+    console.log(this.mdl_pass);
+    let validar = this.db.validarCredenciales(this.mdl_user, this.mdl_pass);
+    if(!validar){
       this.mostrarMensaje();
+      console.log(validar);
+    }else{
+      console.log(validar);
     }
-  }
-
-  recupera(){
-    this.router.navigate(['restpass'])
   }
   async mostrarMensaje() {
     const alert = await this.alertController.create({

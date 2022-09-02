@@ -6,10 +6,11 @@ import { Router } from '@angular/router';
 })
 export class DbService {
   
+  usuario: string = 'admin';
+  contrasena: string = 'admin';
+  valido: boolean = false;
 
   constructor(private router: Router) { }
-
-  valido: boolean = false;
 
   canActivate(){
     if(this.valido){
@@ -20,9 +21,10 @@ export class DbService {
     }
   }
   validarCredenciales(user, pass){
-    if(user == 'admin' && pass == 'admin'){
+    if(user === this.usuario && pass === this.contrasena){
       this.valido = true;
       this.router.navigate(['principal']);
+      return true;
     }else{
       return false;
     }
