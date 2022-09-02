@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { DbService } from './services/db.service';
 
 const routes: Routes = [
   {
@@ -8,22 +9,13 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'principal',
-    redirectTo: 'principal',
-    pathMatch: 'full'
-  },
-  {
-    path: 'restpass',
-    redirectTo: 'restpass',
-    pathMatch: 'full'
-  },
-  {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'principal',
-    loadChildren: () => import('./pages/principal/principal.module').then( m => m.PrincipalPageModule)
+    loadChildren: () => import('./pages/principal/principal.module').then( m => m.PrincipalPageModule),
+    canActivate: [DbService]
   },
   {
     path: 'restpass',
