@@ -1,24 +1,25 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title background="primary">Login</ion-title>
+  <ion-toolbar class="degradado">
+    <ion-title background="primary">Iniciar sesión</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-text-center ion-padding">
 
-  <ion-item color="whide" class="ion-text-center ion-padding">
+  <ion-item color="whide" class="ion-padding">
 
     <ion-label position="floating">Usuario</ion-label>
     <ion-input placeholder="Usuario" [(ngModel)]="mdl_user"></ion-input>
+  </ion-item>
+  <ion-item color="whide" class="ion-padding"> 
     <ion-label position="floating">Contraseña</ion-label>
-    <!-- Input with placeholder -->
     <ion-input type="password"  placeholder="***********" [(ngModel)]="mdl_pass"></ion-input>
   </ion-item>
   <div>
-  <!-- Default -->
-  <ion-button (click)="navegar()">Ingresar</ion-button>
+
+  <ion-button (click)="navegar()" expand="block" class="ion-margin-top">Ingresar</ion-button>
+  
+
+  <ion-button (click)="reestablecer()" expand="block" class="ion-margin-top">No recuerdas tu contraseña</ion-button>
   </div>
-
-  <ion-button (click)="recupera()">No recuerdas tu contraseña</ion-button>
-
 </ion-content>

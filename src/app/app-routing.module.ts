@@ -10,6 +10,31 @@ const routes: Routes = [
   },
   {
     path: 'login',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  {
+    path: 'restartpass',
+    redirectTo: 'restartpass',
+    pathMatch: 'full'
+  },
+  {
+    path: 'principal',
+    redirectTo: 'principal',
+    pathMatch: 'full'
+  },
+  {
+    path: 'e404',
+    redirectTo: 'e404',
+    pathMatch: 'full'
+  },  {
+    path: '**',
+    redirectTo: 'e404',
+    pathMatch: 'full'
+  },
+
+  {
+    path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
@@ -18,8 +43,12 @@ const routes: Routes = [
     canActivate: [DbService]
   },
   {
-    path: 'restpass',
-    loadChildren: () => import('./pages/restpass/restpass.module').then( m => m.RestpassPageModule)
+    path: 'restartpass',
+    loadChildren: () => import('./pages/restartpass/restartpass.module').then( m => m.RestartpassPageModule)
+  },
+  {
+    path: 'e404',
+    loadChildren: () => import('./pages/e404/e404.module').then( m => m.E404PageModule)
   },
 ];
 

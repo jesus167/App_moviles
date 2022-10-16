@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar class="degradado">
+    <ion-title>Restablecer contraseña </ion-title>
+
+    <ion-buttons slot="start">
+      <ion-back-button mode="md" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="ion-text-center ion-padding">
+
+  <ion-item color="whide" class="ion-padding">
+
+    <ion-label position="floating">Correo</ion-label>
+    <ion-input placeholder="Usuario" [(ngModel)]="mdl_user"></ion-input>
+  </ion-item>
+  <ion-item color="whide" class="ion-padding">
+    <ion-label position="floating">Nueva contraseña</ion-label>
+    <ion-input type="password"  placeholder="***********" [(ngModel)]="new_mdl_pass"></ion-input>
+  </ion-item>
+  <ion-item color="whide" class="ion-padding">
+    <ion-label position="floating">Confirma tu contraseña</ion-label>
+    <ion-input type="password" id="validapass" placeholder="***********" [(ngModel)]="valida_mdl_pass"></ion-input>
+  </ion-item>
+  <ion-item color="whide" class="ion-padding">
+    <ion-label position="floating">Nombre y Apellido</ion-label>
+    <ion-input type="password" id="validapass" placeholder="***********" [(ngModel)]="nombre"></ion-input>
+  </ion-item>
+  <div>
+  <ion-button (click)="cambia()" expand="block" class="ion-margin-top">Cambiar la contraseña</ion-button>
+  </div>
+
+</ion-content>
