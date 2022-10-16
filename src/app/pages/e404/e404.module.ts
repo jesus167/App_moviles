@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { RestpassPageRoutingModule } from './restpass-routing.module';
+import { E404PageRoutingModule } from './e404-routing.module';
 
-import { RestpassPage } from './restpass.page';
+import { E404Page } from './e404.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RestpassPageRoutingModule
+    E404PageRoutingModule
   ],
-  declarations: [RestpassPage]
+  declarations: [E404Page]
 })
-export class RestpassPageModule {}
+export class E404PageModule {}

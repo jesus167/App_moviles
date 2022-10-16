@@ -24,3 +24,19 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+ion-content{
+    --padding-top: 40 %;
+    --padding-start: 10%;
+    --padding-end: 10%;
+    --background: url('https://i.pinimg.com/736x/53/67/02/53670256e1dc221b4815dc878ba395f2.jpg') 0 0/100% 100% no-repeat;
+
+}
+ion-item{
+    --color: white;
+}
+ion-button{
+    --expand: block;
+    --margin-top: 20px;
+    --background: #9dbfe5ad;
+}
